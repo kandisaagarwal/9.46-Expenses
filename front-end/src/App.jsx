@@ -41,7 +41,7 @@ const App = () => {
 
         {/* Four buttons */}
         <div className="button-container">
-          <button className="square-button">Add Expense</button>
+          <a><button className="square-button">Add Expense</button></a>
           <button className="square-button">View Expenses</button>
           <button className="square-button">Manage Budget</button>
           <button className="square-button">Settings</button>
@@ -54,20 +54,7 @@ const App = () => {
     </div>
   );
 };
-=======
 
-import Savings from './Components/Savings/Savings'
-import { useState } from 'react'
-import './App.css'
-import React from 'react';
-
-function App() {
-  return 
-
-    <div className="App">
-     
-    </div>
-  );
 }
 
 export default App;
