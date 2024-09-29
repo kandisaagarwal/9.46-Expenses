@@ -2,59 +2,23 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';  
+import ManageExpenses from './Components/ManageExpenses';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
-  const monthlyExpenses = [500, 700, 800, 600, 900, 1000, 750, 850, 950, 650, 550, 1100];
-  const data = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    datasets: [
-      {
-        label: 'Monthly Expenses',
-        data: monthlyExpenses,
-        backgroundColor: 'rgba(54, 162, 235, 0.7)',
-        borderColor: 'rgba(54, 162, 235, 1)',
-        borderWidth: 1
-      }
-    ]
-  };
-
-  const options = {
-    responsive: true,
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  };
-
-  return (
-    <div className="app-container">
-      <header>
-        <h1>Expense Tracker</h1>
-      </header>
-
-      <main>
-        {/* Bar chart */}
-        <div className="chart-container">
-          <Bar data={data} options={options} />
-        </div>
-
-        {/* Four buttons */}
-        <div className="button-container">
-          <a href = './Components/Savings'><button className="square-button">Add Expense</button></a>
-          <button className="square-button">View Expenses</button>
-          <a  href = './Components/ManageExpenses><button className="square-button">Mange expenses</button></a>
-          <button className="square-button">Settings</button>
-        </div>
-      </main>
-
-      <footer>
-        <p>&copy; 2024 Expense Tracker</p>
-      </footer>
-    </div>
-  );
+  return(
+    <div>
+    <Home />
+    <Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/manage-income" element={<ManageIncome />} />
+      <Route path="/manage-expenses" element={<ManageExpenses />} />
+      <Route path="/savings" element={<Savings />} />
+    </Routes>
+  </Router>
+  </div>
+  )
 };
-
-}
 
 export default App;

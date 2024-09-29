@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import './manageExpense.css';
+import './ManageExpenses.css';
 import { Pie } from 'react-chartjs-2';
 import { Chart, ArcElement, Tooltip } from 'chart.js';
 
 // Register necessary Chart.js components
 Chart.register(ArcElement, Tooltip);
 
-function App() {
+function ManageExpenses() {
   const [expenses, setExpenses] = useState([]);
   const [formData, setFormData] = useState({
     category: '',
@@ -184,4 +184,4 @@ function App() {
   );
 }
 
-export default App;
+export default ManageExpenses;
