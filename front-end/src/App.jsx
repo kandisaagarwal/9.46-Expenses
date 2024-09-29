@@ -1,12 +1,9 @@
 import React from 'react';
-import ManageExpense from './Components/ManageExpenses/manageExpense'; 
 
 function App() {
   return (
     <div className="App">
-      <ManageExpense/>
+      <ManageExpenses/>
     </div>
   );
 }
-
-export default App;
