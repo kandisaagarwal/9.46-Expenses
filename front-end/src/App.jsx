@@ -1,9 +1,16 @@
+
+import Savings from './Components/Savings/Savings'
+import { useState } from 'react'
+import './App.css'
 import React from 'react';
 
 function App() {
-  return (
+  return 
+
     <div className="App">
-      <ManageExpenses/>
+     
     </div>
   );
 }
+
+export default App
