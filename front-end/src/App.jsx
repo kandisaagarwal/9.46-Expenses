@@ -1,13 +1,9 @@
 import React from 'react';
-import ManageIncome from './ManageIncome.jsx'; 
-import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <ManageIncome></ManageIncome>
+      <ManageExpenses/>
     </div>
   );
 }
-
-export default App;
