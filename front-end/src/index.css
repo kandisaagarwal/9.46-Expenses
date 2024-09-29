@@ -4,11 +4,15 @@
   font-weight: 400;
 
   color-scheme: light dark;
+  color: rgb(20, 150, 159); /* Change this to make text visible */
+  background-color: #000000; /* This sets the background color to black */
   color: rgba(255, 255, 255, 0.87);
   background-color: #000000;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Make sure to add this to ensure the entire body has a black background */
+body {
+    margin: 0;
+    background-color: #000000; /* Ensure body background is black */
+}
+
