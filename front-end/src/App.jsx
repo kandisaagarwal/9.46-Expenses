@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';  
@@ -53,5 +54,20 @@ const App = () => {
     </div>
   );
 };
+=======
+
+import Savings from './Components/Savings/Savings'
+import { useState } from 'react'
+import './App.css'
+import React from 'react';
+
+function App() {
+  return 
+
+    <div className="App">
+     
+    </div>
+  );
+}
 
 export default App;
