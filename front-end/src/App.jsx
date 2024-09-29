@@ -41,9 +41,9 @@ const App = () => {
 
         {/* Four buttons */}
         <div className="button-container">
-          <a><button className="square-button">Add Expense</button></a>
+          <a href = './Components/Savings'><button className="square-button">Add Expense</button></a>
           <button className="square-button">View Expenses</button>
-          <button className="square-button">Manage Budget</button>
+          <a  href = './Components/ManageExpenses><button className="square-button">Mange expenses</button></a>
           <button className="square-button">Settings</button>
         </div>
       </main>
