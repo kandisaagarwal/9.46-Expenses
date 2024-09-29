@@ -1,13 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Expense Tracker</h1>
+    </header>
+
+    <main>
+        <div class="chart-container">
+            <canvas id="expenseChart"></canvas>
+        </div>
+        <div class="button-container">
+          <div class="button-item">
+              <img src="https://wallpaperaccess.com/full/39668.jpg" class="button-image" alt="Add Expense Icon">
+              <button class="square-button">Add Expense</button>
+          </div>
+          <div class="button-item">
+              <img src="https://th.bing.com/th/id/R.c14576b4319ac6e86d19439fc3730dc4?rik=Ci8rYkseJ%2fEecg&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f04%2fBackgrounds-download-space-wallpaper-HD.jpg&ehk=THftsVAb6REKrqDfgZ2VD2SIXgDYZOdSDjyFIAbmYvg%3d&risl=&pid=ImgRaw&r=0" class="button-image" alt="Track Savings Icon">
+              <button class="square-button">Track Savings</button>
+          </div>
+          <div class="button-item">
+              <img src="https://th.bing.com/th/id/OIP.xO9D2J43koWcT2B7QUwgsQHaEK?rs=1&pid=ImgDetMain" class="button-image" alt="Manage Income Icon">
+              <button class="square-button">Manage Income</button>
+          </div>
+          <div class="button-item">
+              <img src="https://th.bing.com/th/id/R.89fdb1a79b3baf9b4f9398120da82f22?rik=%2fNwKnUDQuh6u2w&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fb%2f7%2f1%2f284029.jpg&ehk=7XQvNUANqlRh%2bvzSWcpXmcGBOZA1bsMwsaTicCZy%2bWg%3d&risl=&pid=ImgRaw&r=0" class="button-image" alt="Speed of Your Expenses Icon">
+              <button class="square-button">Speed of your expenses</button>
+          </div>
+      </div>
+      
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Expense Tracker</p>
+    </footer>
+
+    <script>
+        const monthlyExpenses = [500, 700, 800, 600, 900, 1000, 750, 850, 950, 650, 550, 1100];
+        const ctx = document.getElementById('expenseChart').getContext('2d');
+        const expenseChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Monthly Expenses',
+                    data: monthlyExpenses,
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
 </html>

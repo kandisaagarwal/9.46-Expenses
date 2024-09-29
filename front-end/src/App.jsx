@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import 'chart.js/auto';  
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const monthlyExpenses = [500, 700, 800, 600, 900, 1000, 750, 850, 950, 650, 550, 1100];
+  const data = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    datasets: [
+      {
+        label: 'Monthly Expenses',
+        data: monthlyExpenses,
+        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }
+    ]
+  };
+
+  const options = {
+    responsive: true,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app-container">
+      <header>
+        <h1>Expense Tracker</h1>
+      </header>
 
-export default App
+      <main>
+        {/* Bar chart */}
+        <div className="chart-container">
+          <Bar data={data} options={options} />
+        </div>
+
+        {/* Four buttons */}
+        <div className="button-container">
+          <button className="square-button">Add Expense</button>
+          <button className="square-button">View Expenses</button>
+          <button className="square-button">Manage Budget</button>
+          <button className="square-button">Settings</button>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 Expense Tracker</p>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
