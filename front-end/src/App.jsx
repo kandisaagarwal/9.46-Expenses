@@ -1,25 +1,16 @@
-import Savings from './Components/Savings/Savings'
 
+import Savings from './Components/Savings/Savings'
 import { useState } from 'react'
 import './App.css'
+import React from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  return 
 
-  return (
-    <div>
-      <Savings/>
-      <div class="header">
-        <li><a href="#">Logo</a></li>
-        <div class="header-right">
-          <ul>
-            <li><a href="#">Profile</a></li>
-          </ul>
-        </div>
-      </div>
+    <div className="App">
+     
     </div>
-      )
-      
+  );
 }
 
-      export default App
+export default App
